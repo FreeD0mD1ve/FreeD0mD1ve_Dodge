@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +11,18 @@ public class BulletSpawner : MonoBehaviour
     private Transform target;
     private float spawnRate;
     private float timeAfterSpawn;
+
+    public int hp = 100;
+
+    public void GetDamage(int damage)
+    {
+        hp -= damage;
+        
+        if(hp <= 0)
+        {
+            gameObject.SetActive(false);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
